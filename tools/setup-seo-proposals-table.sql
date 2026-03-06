@@ -25,10 +25,12 @@ CREATE TABLE IF NOT EXISTS seo_proposals (
 ALTER TABLE seo_proposals ENABLE ROW LEVEL SECURITY;
 
 -- Policy: allow all for authenticated users (admin panel)
+DROP POLICY IF EXISTS "seo_proposals_all_authenticated" ON seo_proposals;
 CREATE POLICY "seo_proposals_all_authenticated" ON seo_proposals
   FOR ALL USING (auth.role() = 'authenticated');
 
 -- Policy: allow read for anon (for potential public dashboard)
+DROP POLICY IF EXISTS "seo_proposals_read_anon" ON seo_proposals;
 CREATE POLICY "seo_proposals_read_anon" ON seo_proposals
   FOR SELECT USING (true);
 
@@ -41,6 +43,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+DROP TRIGGER IF EXISTS trigger_seo_proposals_updated_at ON seo_proposals;
 CREATE TRIGGER trigger_seo_proposals_updated_at
   BEFORE UPDATE ON seo_proposals
   FOR EACH ROW
