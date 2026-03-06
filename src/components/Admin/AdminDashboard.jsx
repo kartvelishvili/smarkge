@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Settings, Globe, LogOut, Layout, ExternalLink, PenTool, Layers, BarChart, Search, Languages, Factory, LayoutGrid, Users, Quote, Newspaper, MessageSquare, ClipboardList, Wrench, FileImage, Mail, FileEdit } from 'lucide-react';
+import { Settings, Globe, LogOut, Layout, ExternalLink, PenTool, Layers, BarChart, Search, Languages, Factory, LayoutGrid, Users, Quote, Newspaper, MessageSquare, ClipboardList, Wrench, FileImage, Mail, FileEdit, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { supabase } from '@/lib/customSupabaseClient';
@@ -27,6 +27,7 @@ import EmailUtilityTab from './Tabs/EmailUtilityTab';
 import PortfolioPageTab from './Tabs/PortfolioPageTab';
 import ContactMessagesTab from './Tabs/ContactMessagesTab';
 import PagesContentTab from './Tabs/PagesContentTab';
+import SeoProposalsTab from './Tabs/SeoProposalsTab';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -76,6 +77,7 @@ const AdminDashboard = () => {
                 <TabsTrigger value="testimonials"><Quote className="w-4 h-4 mr-2" /> Testimonials</TabsTrigger>
                 <TabsTrigger value="footer"><Layout className="w-4 h-4 mr-2" /> Footer</TabsTrigger>
                 <TabsTrigger value="pages-content" className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white"><FileEdit className="w-4 h-4 mr-2" /> Pages Content</TabsTrigger>
+                <TabsTrigger value="seo-proposals" className="data-[state=active]:bg-orange-600 data-[state=active]:text-white"><AlertTriangle className="w-4 h-4 mr-2" /> SEO Proposals</TabsTrigger>
               </TabsList>
           </AnimatedSection>
 
@@ -158,6 +160,10 @@ const AdminDashboard = () => {
 
               <TabsContent value="pages-content">
                 <PagesContentTab />
+              </TabsContent>
+
+              <TabsContent value="seo-proposals">
+                <SeoProposalsTab />
               </TabsContent>
           </AnimatedSection>
 
