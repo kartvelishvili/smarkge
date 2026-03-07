@@ -218,7 +218,7 @@ const Footer = () => {
 
             {/* OXO.ge Counter */}
             <div className="mt-4">
-              <OxoCounter siteId="54" style="1" color="#6366f1" />
+              <OxoCounter siteId="54" style="5" color="#000000" />
             </div>
           </div>
 

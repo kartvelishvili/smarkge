@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function OxoCounter({ siteId = '54', style = '1', color = '#6366f1' }) {
+export default function OxoCounter({ siteId = '54', style = '5', color = '#000000' }) {
   const loaded = useRef(false);
 
   useEffect(() => {
