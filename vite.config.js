@@ -220,8 +220,6 @@ const addTransformIndexHtml = {
 	},
 };
 
-console.warn = () => {};
-
 const logger = createLogger()
 const loggerError = logger.error
 
@@ -236,9 +234,8 @@ logger.error = (msg, options) => {
 export default defineConfig({
 	customLogger: logger,
 	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin(), selectionModePlugin()] : []),
+		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin(), selectionModePlugin(), addTransformIndexHtml] : []),
 		react(),
-		addTransformIndexHtml
 	],
 	server: {
 		cors: true,
