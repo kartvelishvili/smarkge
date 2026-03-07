@@ -267,7 +267,7 @@ const CoreServices = ({ darkMode }) => {
 
   const getIconComponent = (iconNameOrUrl) => {
     if (iconNameOrUrl?.startsWith('http') || iconNameOrUrl?.startsWith('/')) {
-      return ({ className }) => <img src={iconNameOrUrl} alt="Service Icon - საიტის დამზადება და SEO" className={`${className} object-contain`} />;
+      return ({ className }) => <img src={iconNameOrUrl} alt="Service Icon - საიტის დამზადება და SEO" loading="lazy" className={`${className} object-contain`} />;
     }
     if (iconNameOrUrl === 'Code') return Code;
     if (iconNameOrUrl === 'TrendingUp') return TrendingUp;

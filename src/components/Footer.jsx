@@ -176,6 +176,9 @@ const Footer = () => {
                <img 
                  src={logoSrc} 
                  alt="Smarketer Logo" 
+                 loading="lazy"
+                 width="160"
+                 height="48"
                  className="h-12 object-contain transition-transform duration-300 group-hover:scale-105" 
                />
             </Link>

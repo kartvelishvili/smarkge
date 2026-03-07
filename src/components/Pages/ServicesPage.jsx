@@ -209,12 +209,37 @@ const ServicesPage = () => {
   
   // Additional services and FAQ arrays from DB or defaults
 
+  // Service + BreadcrumbList JSON-LD schemas (SEO-010, SEO-020)
+  const serviceSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": language === 'ka' ? "ციფრული მარკეტინგი" : "Digital Marketing",
+      "provider": {
+        "@type": "Organization",
+        "name": "Smarketer",
+        "url": "https://smarketer.ge"
+      },
+      "areaServed": "GE",
+      "description": desc
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": language === 'ka' ? "მთავარი" : "Home", "item": "https://smarketer.ge/" },
+        { "@type": "ListItem", "position": 2, "name": language === 'ka' ? "სერვისები" : "Services", "item": "https://smarketer.ge/services" }
+      ]
+    }
+  ];
+
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-[#0A0F1C]' : 'bg-gray-50'}`}>
       <SEO 
         slug="/services" 
         title={title}
         description={desc}
+        jsonLd={serviceSchema}
       />
       <Header />
 

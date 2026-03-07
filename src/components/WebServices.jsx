@@ -98,7 +98,11 @@ const WebServices = ({ darkMode }) => {
             className="relative"
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-               <img alt="Modern web development interface" className="w-full h-auto" src="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1" />
+               <img alt="Modern web development interface" loading="lazy" className="w-full h-auto" 
+                 src="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?w=800" 
+                 srcSet="https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?w=400 400w, https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?w=800 800w, https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?w=1200 1200w"
+                 sizes="(max-width: 768px) 100vw, 50vw"
+               />
                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-transparent to-transparent opacity-60"></div>
             </div>
             {/* Decorative elements */}

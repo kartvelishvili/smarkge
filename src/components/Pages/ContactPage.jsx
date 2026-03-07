@@ -255,6 +255,7 @@ const MapComponent = ({ companyInfo }) => (
           <img 
             src={companyInfo.office_image} 
             alt="Office" 
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors"></div>
@@ -610,9 +611,34 @@ const ContactPage = () => {
     }
   }, [language]);
 
+  // LocalBusiness JSON-LD schema (SEO-019)
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Smarketer",
+    "description": language === 'ka' ? "ციფრული მარკეტინგის სააგენტო - ვებ დიზაინი, SEO, სოციალური მედია" : "Digital Marketing Agency - Web Design, SEO, Social Media",
+    "url": "https://smarketer.ge",
+    "telephone": companyInfo.phone || "+995 555 123 456",
+    "email": companyInfo.email || "info@smarketer.ge",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": companyInfo.address_en || "Tbilisi, Georgia",
+      "addressLocality": "Tbilisi",
+      "addressCountry": "GE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.7151",
+      "longitude": "44.8271"
+    },
+    "openingHours": companyInfo.working_hours_en || "Mo-Fr 10:00-19:00",
+    "image": "https://smarketer.ge/smarketer-logo.png",
+    "priceRange": "$$"
+  };
+
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-[#0A0F1C]' : 'bg-[#F4F7FF]'}`}>
-      <SEO slug="/contact" fallbackTitle={t.heroTitle} />
+      <SEO slug="/contact" fallbackTitle={t.heroTitle} jsonLd={localBusinessSchema} />
       <Header />
 
       {designStyle === 'minimal' && <MinimalDesign t={t} companyInfo={companyInfo} darkMode={darkMode} language={language} SOCIAL_LINKS={SOCIAL_LINKS} />}

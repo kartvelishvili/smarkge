@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { usePageContent } from '@/hooks/usePageContent';
@@ -32,8 +33,25 @@ const FAQ = ({ darkMode }) => {
     answer: item[`answer_${lang}`] || item.answer_en || ''
   }));
 
+  // FAQPage JSON-LD schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
-    <section className={`py-20 lg:py-32 ${darkMode ? 'bg-[#0D1126]' : 'bg-white'}`}>
+    <section className={`py-20 lg:py-32 ${darkMode ? 'bg-[#0D1126]' : 'bg-white'}`} aria-label="FAQ">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -66,6 +84,8 @@ const FAQ = ({ darkMode }) => {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                aria-expanded={openIndex === index}
+                aria-label={faq.question}
                 className="w-full p-6 flex items-center justify-between text-left transition-colors hover:bg-white/5"
               >
                 <span className={`text-lg font-semibold pr-4 ${darkMode ? 'text-white' : 'text-[#0A0F1C]'}`}>

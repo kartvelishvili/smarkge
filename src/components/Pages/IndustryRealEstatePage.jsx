@@ -166,6 +166,9 @@ const IndustryRealEstatePage = () => {
     <div className={`min-h-screen ${darkMode ? 'bg-[#0A0F1C] text-white' : 'bg-slate-50 text-slate-900'}`}>
       <Helmet>
         <title>{t.title} | Smarketer</title>
+        <meta name="description" content={t.subtitle} />
+        <link rel="canonical" href="https://smarketer.ge/industry/real-estate" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smarketer.ge/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://smarketer.ge/services"},{"@type":"ListItem","position":3,"name":"Real Estate","item":"https://smarketer.ge/industry/real-estate"}]})}</script>
       </Helmet>
       <Header />
       
@@ -220,7 +223,7 @@ const IndustryRealEstatePage = () => {
                 className="lg:w-1/2 relative"
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
-                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" alt="Modern skyscrapers and city architecture real estate" src={heroImage} />
+                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy" alt="Modern skyscrapers and city architecture real estate" src={heroImage} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
                 </div>
                 

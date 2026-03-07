@@ -230,6 +230,7 @@ const Brands = ({ darkMode }) => {
                      <img 
                        src={brand.logo_url || brand.logo} 
                        alt={brand.name} 
+                       loading="lazy"
                        className="h-12 md:h-16 w-auto object-contain transition-all duration-500 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100"
                        style={{ maxWidth: '200px' }}
                      />

@@ -191,7 +191,7 @@ const PortfolioDetailPage = () => {
                                 className={`rounded-xl overflow-hidden cursor-pointer border shadow-lg group relative aspect-video ${darkMode ? 'border-white/10' : 'border-gray-100'}`}
                                 onClick={() => setSelectedImage(img)}
                             >
-                                <img src={img} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                <img src={img} alt={`Gallery ${idx + 1}`} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                                     <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </div>
@@ -213,7 +213,7 @@ const PortfolioDetailPage = () => {
                                 className="break-inside-avoid rounded-xl overflow-hidden cursor-pointer border shadow-lg group relative mb-6"
                                 onClick={() => setSelectedImage(img)}
                             >
-                                <img src={img} alt={`Gallery ${idx + 1}`} className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
+                                <img src={img} alt={`Gallery ${idx + 1}`} loading="lazy" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                                     <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </div>
@@ -284,7 +284,7 @@ const PortfolioDetailPage = () => {
                                         onClick={() => setCurrentSlide(idx)}
                                         className={`flex-shrink-0 w-24 h-16 rounded overflow-hidden border-2 transition-all ${currentSlide === idx ? 'border-[#5468E7]' : 'border-transparent opacity-60 hover:opacity-100'}`}
                                      >
-                                         <img src={img} className="w-full h-full object-cover" alt="" />
+                                         <img src={img} loading="lazy" className="w-full h-full object-cover" alt={`${title} thumbnail ${idx + 1}`} />
                                      </button>
                                  ))}
                              </div>
@@ -316,7 +316,7 @@ const PortfolioDetailPage = () => {
              <div className="relative z-10">
                  <div className="flex items-center gap-4 mb-6">
                      {tImage && (
-                         <img src={tImage} alt="Client" className="w-12 h-12 rounded-full bg-white p-0.5 object-cover shadow-sm border-2 border-white/20" />
+                         <img src={tImage} alt={`${tName} - client testimonial`} loading="lazy" className="w-12 h-12 rounded-full bg-white p-0.5 object-cover shadow-sm border-2 border-white/20" />
                      )}
                      <div>
                          <h4 className="font-bold text-lg leading-tight">{tName}</h4>
@@ -423,13 +423,13 @@ const PortfolioDetailPage = () => {
                     <AnimatedSection delay={0.2} className="relative">
                         <div className={`relative rounded-3xl overflow-hidden border shadow-2xl ${darkMode ? 'bg-[#0D1126] border-white/10' : 'bg-white border-gray-100'}`}>
                             <div className="aspect-video relative overflow-hidden group cursor-pointer" onClick={() => setSelectedImage(project.image_url)}>
-                                <img src={project.image_url} alt={title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <img src={project.image_url} alt={title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center"><ZoomIn className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" /></div>
                             </div>
                             {project.logo_url && (
                                 <div className="absolute -bottom-10 right-10">
                                     <div className="w-24 h-24 rounded-full overflow-hidden bg-white shadow-xl flex items-center justify-center relative z-10" style={{ border: `4px solid ${project.logo_border_color || '#ffffff'}` }}>
-                                        <img src={project.logo_url} alt="Logo" className="w-full h-full object-cover" />
+                                        <img src={project.logo_url} alt={`${title} logo`} loading="lazy" className="w-full h-full object-cover" />
                                     </div>
                                 </div>
                             )}
@@ -458,7 +458,7 @@ const PortfolioDetailPage = () => {
                         <VisitButton />
                          {project.logo_url && (
                             <div className="mt-8 w-20 h-20 rounded-full overflow-hidden bg-white shadow-lg border-2 border-white">
-                                <img src={project.logo_url} alt="Logo" className="w-full h-full object-cover" />
+                                <img src={project.logo_url} alt={`${title} logo`} loading="lazy" className="w-full h-full object-cover" />
                             </div>
                         )}
                         <TestimonialCard className="mt-12" />
@@ -466,7 +466,7 @@ const PortfolioDetailPage = () => {
                 </div>
                 <div className="lg:col-span-8 space-y-8">
                     <AnimatedSection delay={0.2} className="rounded-2xl overflow-hidden shadow-2xl border border-white/10" onClick={() => setSelectedImage(project.image_url)}>
-                        <img src={project.image_url} alt="Cover" className="w-full h-auto" />
+                        <img src={project.image_url} alt="Cover" loading="lazy" className="w-full h-auto" />
                     </AnimatedSection>
                     
                     <SocialMediaSection /> {/* Moved SocialMediaSection here */}
@@ -480,7 +480,7 @@ const PortfolioDetailPage = () => {
       {layout === 'layout_c' && (
         <main className="pb-0">
             <AnimatedSection className="relative h-[70vh] w-full overflow-hidden">
-                <img src={project.image_url} alt={title} className="w-full h-full object-cover" />
+                <img src={project.image_url} alt={title} loading="lazy" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/50 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full p-8 lg:p-16 container mx-auto">
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -518,7 +518,7 @@ const PortfolioDetailPage = () => {
             {/* Hero Section */}
             <div className="relative h-[65vh] w-full overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                   <img src={project.image_url} alt={title} className="w-full h-full object-cover" />
+                   <img src={project.image_url} alt={title} loading="lazy" className="w-full h-full object-cover" />
                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
                 </div>
                 
@@ -562,7 +562,7 @@ const PortfolioDetailPage = () => {
                             <div className="flex items-center gap-4">
                                 {project.logo_url && (
                                     <div className="w-16 h-16 rounded-full overflow-hidden bg-white shadow-md border-2 border-gray-100 dark:border-white/10 flex-shrink-0">
-                                        <img src={project.logo_url} className="w-full h-full object-cover" alt="Logo" />
+                                        <img src={project.logo_url} className="w-full h-full object-cover" loading="lazy" alt={`${title} logo`} />
                                     </div>
                                 )}
                                 <div>
@@ -631,6 +631,7 @@ const PortfolioDetailPage = () => {
                                          <img 
                                             src={project.project_tabs[activeTab]?.image_url || project.project_tabs[activeTab]?.url} 
                                             alt={language === 'ka' ? project.project_tabs[activeTab]?.label_ka : project.project_tabs[activeTab]?.label_en} 
+                                            loading="lazy"
                                             className="w-full h-auto block"
                                          />
                                      </div>
@@ -680,7 +681,7 @@ const PortfolioDetailPage = () => {
             <div className="mb-12 border-b border-white/10 pb-12">
                 <div className="flex justify-between items-start mb-8">
                     <BackButton />
-                    <div className="hidden lg:block">{project.logo_url && <img src={project.logo_url} className="w-16 h-16 rounded-full border-2 border-white/20" alt="Logo" />}</div>
+                    <div className="hidden lg:block">{project.logo_url && <img src={project.logo_url} className="w-16 h-16 rounded-full border-2 border-white/20" loading="lazy" alt={`${title} logo`} />}</div>
                 </div>
                 <div className="grid lg:grid-cols-2 gap-12">
                     <AnimatedSection>

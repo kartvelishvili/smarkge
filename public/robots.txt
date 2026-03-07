@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /paneli
+Disallow: /paneli/dashboard
+
+Sitemap: https://smarketer.ge/sitemap.xml

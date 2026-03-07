@@ -259,12 +259,12 @@ const Header = ({ alwaysOpaque = false }) => {
             {/* Logo Area */}
             <div className="flex items-center shrink-0">
                <Link to="/" className="relative z-50 block transition-transform hover:scale-105 active:scale-95 duration-200">
-                  <img src={logoUrl} alt="Smarketer Logo" className="h-8 lg:h-9 w-auto object-contain" />
+                  <img src={logoUrl} alt="Smarketer Logo" width="160" height="36" className="h-8 lg:h-9 w-auto object-contain" />
                </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <nav className={`hidden lg:flex items-center gap-2 ${fontClass}`}>
+            <nav aria-label="Main navigation" className={`hidden lg:flex items-center gap-2 ${fontClass}`}>
               {menuStructure.map((item) => (
                 <div 
                   key={item.key} 
@@ -407,6 +407,8 @@ const Header = ({ alwaysOpaque = false }) => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
               className={`lg:hidden p-2.5 rounded-xl relative z-50 transition-all active:scale-95 ${
                 isDark ? 'text-gray-300 hover:text-white bg-white/5' : 'text-gray-700 hover:text-black bg-gray-100'
               }`}

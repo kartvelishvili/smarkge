@@ -86,7 +86,10 @@ const SeoContent = ({ darkMode }) => {
                   <img 
                     className="w-full h-[400px] lg:h-[600px] object-cover transform transition-transform duration-1000 group-hover:scale-105" 
                     alt="Smarketer creative team working on digital strategy"
+                    loading="lazy"
                     src="https://i.postimg.cc/qq8vmFZS/smarketer-office.webp" 
+                    width="800"
+                    height="600" 
                   />
                   
                   {/* Floating Glass Card - Stats */}

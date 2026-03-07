@@ -166,6 +166,9 @@ const IndustryB2BPage = () => {
     <div className={`min-h-screen ${darkMode ? 'bg-[#0A0F1C] text-white' : 'bg-slate-50 text-slate-900'}`}>
       <Helmet>
         <title>{t.title} | Smarketer</title>
+        <meta name="description" content={t.subtitle} />
+        <link rel="canonical" href="https://smarketer.ge/industry/b2b" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smarketer.ge/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://smarketer.ge/services"},{"@type":"ListItem","position":3,"name":"B2B","item":"https://smarketer.ge/industry/b2b"}]})}</script>
       </Helmet>
       <Header />
       
@@ -220,7 +223,7 @@ const IndustryB2BPage = () => {
                 className="lg:w-1/2 relative"
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
-                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" alt="Business people shaking hands in modern corporate office" src={heroImage} />
+                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy" alt="Business people shaking hands in modern corporate office" src={heroImage} />
                   <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900/30 to-transparent" />
                 </div>
                 

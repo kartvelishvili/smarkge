@@ -78,6 +78,33 @@ const NewsDetailPage = () => {
   const excerpt = language === 'ka' ? post.excerpt_ka : post.excerpt_en;
   const readTime = getReadTime(content);
 
+  // Article JSON-LD schema (SEO-011)
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": excerpt,
+    "image": post.featured_image_url,
+    "author": {
+      "@type": "Person",
+      "name": post.author || "Smarketer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Smarketer",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://smarketer.ge/smarketer-logo.png"
+      }
+    },
+    "datePublished": post.publish_date,
+    "dateModified": post.updated_at || post.publish_date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://smarketer.ge/news/${slug}`
+    }
+  };
+
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-[#0A0F1C]' : 'bg-[#F4F7FF]'}`}>
       <SEO 
@@ -86,6 +113,7 @@ const NewsDetailPage = () => {
         overrideDescription={excerpt}
         overrideImage={post.featured_image_url}
         fallbackTitle="News Detail"
+        jsonLd={articleSchema}
       />
 
       <Header alwaysOpaque />
@@ -96,6 +124,7 @@ const NewsDetailPage = () => {
              <img 
                src={post.featured_image_url || "https://via.placeholder.com/1200x600"} 
                alt={title} 
+               loading="lazy"
                className="w-full h-full object-cover" 
              />
              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1C] via-[#0A0F1C]/60 to-transparent"></div>
@@ -194,7 +223,7 @@ const NewsDetailPage = () => {
                        {relatedPosts.length > 0 ? relatedPosts.map(related => (
                           <Link key={related.id} to={`/news/${related.slug}`} className="group flex gap-4 items-start">
                              <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 relative">
-                                <img src={related.featured_image_url} alt={related.title} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+                                <img src={related.featured_image_url} alt={related.title} loading="lazy" className="w-full h-full object-cover transition-transform group-hover:scale-110" />
                              </div>
                              <div>
                                 <h4 className={`text-sm font-bold line-clamp-2 mb-2 group-hover:text-[#5468E7] transition-colors ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>

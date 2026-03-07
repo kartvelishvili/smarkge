@@ -171,6 +171,9 @@ const IndustryHealthcarePage = () => {
     <div className={`min-h-screen ${darkMode ? 'bg-[#0A0F1C] text-white' : 'bg-slate-50 text-slate-900'}`}>
       <Helmet>
         <title>{t.title} | Smarketer</title>
+        <meta name="description" content={t.subtitle} />
+        <link rel="canonical" href="https://smarketer.ge/industry/healthcare" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smarketer.ge/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://smarketer.ge/services"},{"@type":"ListItem","position":3,"name":"Healthcare","item":"https://smarketer.ge/industry/healthcare"}]})}</script>
       </Helmet>
       <Header />
       
@@ -230,7 +233,7 @@ const IndustryHealthcarePage = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent z-10 group-hover:opacity-0 transition-opacity duration-500" />
-                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" alt="Modern doctor using tablet in high-tech clinic" src={heroImage} />
+                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy" alt="Modern doctor using tablet in high-tech clinic" src={heroImage} />
                 </div>
                 {/* Floating Badge */}
                 <motion.div 

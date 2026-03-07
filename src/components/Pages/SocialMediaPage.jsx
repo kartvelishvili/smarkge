@@ -307,7 +307,7 @@ const SocialMediaPage = () => {
       title_ka: "სტრატეგია და დაგეგმვა",
       desc_en: "Social media service begins with business analysis and detailed strategy development.",
       desc_ka: "სოციალური მედია მომსახურება იწყება ბიზნესის ანალიზით და დეტალური სტრატეგიის შემუშავებით.",
-      imgComp: <img alt={language === 'ka' ? "სოციალური მედია სტრატეგიის დაგეგმვა და გუნდური განხილვა" : "Social media strategy planning and team meeting"} src="https://images.unsplash.com/photo-1690191886622-fd8d6cda73bd" />
+      imgComp: <img loading="lazy" alt={language === 'ka' ? "სოციალური მედია სტრატეგიის დაგეგმვა და გუნდური განხილვა" : "Social media strategy planning and team meeting"} src="https://images.unsplash.com/photo-1690191886622-fd8d6cda73bd" />
     },
     {
       id: 2,
@@ -316,7 +316,7 @@ const SocialMediaPage = () => {
       title_ka: "კონტენტის დაგეგმვა და შექმნა",
       desc_en: "We create high-quality visuals and copy, crucial for Facebook and Instagram page management.",
       desc_ka: "ვქმნით მაღალი ხარისხის ვიზუალებს და ტექსტებს, რაც გადამწყვეტია Facebook და Instagram გვერდის მართვისას.",
-      imgComp: <img alt={language === 'ka' ? "კონტენტის დაგეგმვა და დიზაინის შექმნა Facebook და Instagram-ისთვის" : "Content planning and design creation for Facebook and Instagram"} src="https://images.unsplash.com/photo-1675119715594-30fde4bd3dbc" />
+      imgComp: <img loading="lazy" alt={language === 'ka' ? "კონტენტის დაგეგმვა და დიზაინის შექმნა Facebook და Instagram-ისთვის" : "Content planning and design creation for Facebook and Instagram"} src="https://images.unsplash.com/photo-1675119715594-30fde4bd3dbc" />
     },
     {
       id: 3,
@@ -325,7 +325,7 @@ const SocialMediaPage = () => {
       title_ka: "სარეკლამო კამპანიის გაშვება",
       desc_en: "Social media advertising: Launching targeted campaigns on Facebook, Instagram, and other platforms.",
       desc_ka: "რეკლამა სოციალურ მედიაში: მიზნობრივი კამპანიების გაშვება Facebook, Instagram და სხვა პლატფორმებზე.",
-      imgComp: <img alt={language === 'ka' ? "რეკლამა სოციალურ მედიაში - კამპანიის წარმატებული გაშვება" : "Social media advertising - successful campaign launch"} src="https://images.unsplash.com/photo-1700508317396-e343a69ac72f" />
+      imgComp: <img loading="lazy" alt={language === 'ka' ? "რეკლამა სოციალურ მედიაში - კამპანიის წარმატებული გაშვება" : "Social media advertising - successful campaign launch"} src="https://images.unsplash.com/photo-1700508317396-e343a69ac72f" />
     },
     {
       id: 4,
@@ -334,7 +334,7 @@ const SocialMediaPage = () => {
       title_ka: "მონიტორინგი და ოპტიმიზაცია",
       desc_en: "Constant monitoring and optimization of campaigns for maximum results.",
       desc_ka: "კამპანიების მუდმივი მონიტორინგი და ოპტიმიზაცია მაქსიმალური შედეგისთვის.",
-      imgComp: <img alt={language === 'ka' ? "სოციალური მედია კამპანიების მონიტორინგი და ანალიტიკა" : "Social media campaign monitoring and analytics"} src="https://images.unsplash.com/photo-1625296276703-3fbc924f07b5" />
+      imgComp: <img loading="lazy" alt={language === 'ka' ? "სოციალური მედია კამპანიების მონიტორინგი და ანალიტიკა" : "Social media campaign monitoring and analytics"} src="https://images.unsplash.com/photo-1625296276703-3fbc924f07b5" />
     },
     {
       id: 5,
@@ -343,7 +343,7 @@ const SocialMediaPage = () => {
       title_ka: "რეპორტინგი და ანალიზი",
       desc_en: "Detailed reporting on social media campaign results and future recommendations.",
       desc_ka: "დეტალური რეპორტინგი სოციალური მედია კამპანიების შედეგებზე და სამომავლო რეკომენდაციები.",
-      imgComp: <img alt={language === 'ka' ? "Facebook გვერდის მართვის რეპორტინგი და შედეგების ანალიზი" : "Facebook page management reporting and results analysis"} src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd" />
+      imgComp: <img loading="lazy" alt={language === 'ka' ? "Facebook გვერდის მართვის რეპორტინგი და შედეგების ანალიზი" : "Facebook page management reporting and results analysis"} src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd" />
     },
     {
       id: 6,
@@ -352,7 +352,7 @@ const SocialMediaPage = () => {
       title_ka: "მუდმივი გაუმჯობესება",
       desc_en: "Continuous growth of social media service quality through testing and innovation.",
       desc_ka: "სოციალური მედია მომსახურების ხარისხის მუდმივი ზრდა ტესტირებისა და ინოვაციების გზით.",
-      imgComp: <img alt={language === 'ka' ? "სოციალური მედია მომსახურების გაუმჯობესება და ზრდა" : "Improvement and growth of social media services"} src="https://images.unsplash.com/photo-1691405167344-c3bbc9710ad2" />
+      imgComp: <img loading="lazy" alt={language === 'ka' ? "სოციალური მედია მომსახურების გაუმჯობესება და ზრდა" : "Improvement and growth of social media services"} src="https://images.unsplash.com/photo-1691405167344-c3bbc9710ad2" />
     }
   ];
 

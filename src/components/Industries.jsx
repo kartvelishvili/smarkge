@@ -160,6 +160,7 @@ const Industries = ({ darkMode }) => {
                         <img 
                            src={cardImage} 
                            alt={name} 
+                           loading="lazy"
                            className="w-full h-full object-cover transition-all duration-500 filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-110"
                         />
                         {/* Gradient Overlay for Text Readability */}

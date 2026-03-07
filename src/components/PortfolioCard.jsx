@@ -45,6 +45,7 @@ const PortfolioCard = ({ project, industriesMap, language, darkMode, index = 0 }
                 <img 
                     src={project.image_url || 'https://images.unsplash.com/photo-1555066931-4365d14bab8c'} 
                     alt={title} 
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 
@@ -87,7 +88,7 @@ const PortfolioCard = ({ project, industriesMap, language, darkMode, index = 0 }
                 {/* Optional Floating Logo */}
                 {project.logo_url && (
                     <div className="absolute -top-6 right-5 w-12 h-12 rounded-xl overflow-hidden shadow-lg border-2 border-white/20 z-20 bg-white">
-                         <img src={project.logo_url} alt="Logo" className="w-full h-full object-cover" />
+                         <img src={project.logo_url} alt={`${title} logo`} loading="lazy" className="w-full h-full object-cover" />
                     </div>
                 )}
 

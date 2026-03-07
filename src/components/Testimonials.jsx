@@ -140,7 +140,7 @@ const Testimonials = ({ darkMode }) => {
         <div className="relative z-10 flex items-center gap-3 mb-2 md:mb-4">
            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white p-0.5 flex-shrink-0 shadow-sm border-2 border-white/20">
               {tImage ? (
-                 <img src={tImage} alt={tName} className="w-full h-full object-cover rounded-full" />
+                 <img src={tImage} alt={tName} loading="lazy" className="w-full h-full object-cover rounded-full" />
               ) : (
                  <div className="w-full h-full rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-bold text-base">
                     {tName ? tName.charAt(0) : '?'}

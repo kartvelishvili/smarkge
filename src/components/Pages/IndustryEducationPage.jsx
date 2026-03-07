@@ -166,6 +166,9 @@ const IndustryEducationPage = () => {
     <div className={`min-h-screen ${darkMode ? 'bg-[#0A0F1C] text-white' : 'bg-slate-50 text-slate-900'}`}>
       <Helmet>
         <title>{t.title} | Smarketer</title>
+        <meta name="description" content={t.subtitle} />
+        <link rel="canonical" href="https://smarketer.ge/industry/education" />
+        <script type="application/ld+json">{JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://smarketer.ge/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://smarketer.ge/services"},{"@type":"ListItem","position":3,"name":"Education","item":"https://smarketer.ge/industry/education"}]})}</script>
       </Helmet>
       <Header />
       
@@ -220,7 +223,7 @@ const IndustryEducationPage = () => {
                 className="lg:w-1/2 relative"
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
-                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" alt="Student learning online on laptop with graphics" src={heroImage} />
+                  <img className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy" alt="Student learning online on laptop with graphics" src={heroImage} />
                   <div className="absolute inset-0 bg-gradient-to-tr from-yellow-900/30 to-transparent" />
                 </div>
                 

@@ -86,7 +86,7 @@ const Blog = ({ darkMode }) => {
                 >
                   <div className="relative h-48 overflow-hidden">
                     {post.featured_image_url ? (
-                       <img alt={title} className="w-full h-full object-cover transition-transform group-hover:scale-110" src={post.featured_image_url} />
+                       <img alt={title} loading="lazy" className="w-full h-full object-cover transition-transform group-hover:scale-110" src={post.featured_image_url} />
                     ) : (
                        <div className={`w-full h-full flex items-center justify-center ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
                           <span className="text-gray-400 text-xs">No Image</span>

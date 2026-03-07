@@ -378,6 +378,7 @@ const Hero = ({ darkMode, seoH1 }) => {
               <button
                 key={idx}
                 onClick={() => goToSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
                 className={`w-3 h-3 rounded-full transition-all ${currentSlide === idx ? 'bg-[#5468E7] scale-125' : 'bg-white/30 hover:bg-white/50'}`}
               />
             ))}
@@ -548,6 +549,7 @@ const Hero = ({ darkMode, seoH1 }) => {
                               <button
                                 key={idx}
                                 onClick={() => goToSlide(idx)}
+                                aria-label={`Go to slide ${idx + 1}`}
                                 className={`w-2 h-2 rounded-full transition-all ${currentSlide === idx ? 'bg-[#5468E7] w-6' : darkMode ? 'bg-white/20' : 'bg-black/20'}`}
                               />
                             ))}
