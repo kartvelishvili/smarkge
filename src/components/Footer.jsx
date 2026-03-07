@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/lib/customSupabaseClient';
 import { useTheme } from '@/contexts/ThemeContext';
 import { Link } from 'react-router-dom';
+import OxoCounter from '@/components/OxoCounter';
 
 // --- Social icon resolver ---
 const SOCIAL_ICON_MAP = {
@@ -213,6 +214,11 @@ const Footer = () => {
                   </a>
                 );
               })}
+            </div>
+
+            {/* OXO.ge Counter */}
+            <div className="mt-4">
+              <OxoCounter siteId="54" style="1" color="#6366f1" />
             </div>
           </div>
 
